@@ -1,7 +1,9 @@
+// code from: https://www.geeksforgeeks.org/program-distance-two-points-earth/#:~:text=For%20this%20divide%20the%20values,is%20the%20radius%20of%20Earth.
+
 // JavaScript program to calculate Distance Between
 // Two Points on Earth
 
-function distance(lat1, lat2, lon1, lon2) {
+function calcDistance(lat1, lat2, lon1, lon2) {
   // The math module contains a function
   // named toRadians which converts from
   // degrees to radians.
@@ -33,4 +35,4 @@ let lat1 = 50.107407;
 let lat2 = 52.525592;
 let lon1 = 8.664137;
 let lon2 = 13.369545;
-console.log(distance(lat1, lat2, lon1, lon2));
+console.log(calcDistance(lat1, lat2, lon1, lon2));
