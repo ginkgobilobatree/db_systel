@@ -11,6 +11,9 @@ app.get(api, (req, res) => {
 app.get(api + "/:station1/:station2", (req, res) => {
   const stat1 = req.params.station1;
   const stat2 = req.params.station2;
+
+  if(!(stat1 in DS100) || !(stat2 in DS100)) res.send({"were your entries valid?": "NOPE!"});
+
   const [lat1, lat2, lang1, lang2] = [
     DS100[stat1].lat,
     DS100[stat2].lat,
@@ -20,8 +23,8 @@ app.get(api + "/:station1/:station2", (req, res) => {
   const distance = calcDistance(lat1, lat2, lang1, lang2);
 
   res.send({
-    from: DS100[stat1]?.name,
-    to: DS100[stat2]?.name,
+    from: DS100[stat1].name,
+    to: DS100[stat2].name,
     distance: distance,
     unit: "km",
   });
