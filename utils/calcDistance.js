@@ -29,10 +29,4 @@ function calcDistance(lat1, lat2, lon1, lon2) {
   return Math.round(c * r);
 }
 
-// Driver code
-
-let lat1 = 50.107407;
-let lat2 = 52.525592;
-let lon1 = 8.664137;
-let lon2 = 13.369545;
-console.log(calcDistance(lat1, lat2, lon1, lon2));
+module.exports = calcDistance;

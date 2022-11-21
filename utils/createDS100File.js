@@ -8,8 +8,8 @@ fs.createReadStream("../data/D_Bahnhof_2020_alle.csv")
   .on("data", function (row) {
     if (row[4] === "FV") {
       DS100[row[1]] = {
-        lang: row[5],
-        lat: row[6],
+        lang: row[5].split(',').join('.'),
+        lat: row[6].split(',').join('.'),
         name: row[3],
       };
     }
